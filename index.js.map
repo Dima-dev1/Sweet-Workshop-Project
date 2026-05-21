@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"index.js","sources":["../src/js/services/api/api.js"],"sourcesContent":["import axios from 'axios';\n\nexport const apiInstance = axios.create({\n  baseURL: 'https://deserts-store.b.goit.study/api',\n});\n"],"names":["axios"],"mappings":"svBAE2BA,EAAM,OAAO,CACtC,QAAS,wCACX,CAAC"}
