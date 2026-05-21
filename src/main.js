@@ -1,0 +1,7 @@
+import './js/header.js';
+import './js/hero.js';
+import './js/dessertList.js';
+import './js/about.js';
+import './js/faq.js';
+import './js/feedback.js';
+import './js/order.js';
