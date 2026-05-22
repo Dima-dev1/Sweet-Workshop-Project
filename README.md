@@ -4,7 +4,7 @@ Zahar(Zohanimaa) - Header
 
 Oleg Pov(olegapov) - Hero Section
 
-Mishka Tomashevskyi() - Dessert List Section
+Mishka Tomashevskyi(Mishka56) - Dessert List Section
 
 Ksenia(Kimmimaru) - About Us Section
 
