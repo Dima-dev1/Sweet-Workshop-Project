@@ -16,4 +16,4 @@ Dima(Dima-dev1) - Dessert Details Modal
 
 Krystyna(krystyna-prokopiv) - Order Modal
 
-Anna() - Footer
+Krystyna(krystyna-prokopiv) - Footer
