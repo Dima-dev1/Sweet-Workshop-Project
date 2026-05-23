@@ -1,0 +1,13 @@
+.hero-section {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 156px;
+  padding-bottom: 156px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/src/img/hero/desktop/hero-desktop-1x.png'); */
+  background-image: url('./img/hero/desktop/hero-desktop-1x.png');
+}
