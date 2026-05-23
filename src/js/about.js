@@ -3,7 +3,7 @@ import 'swiper/css/bundle';
 
 let aboutSwiper = null;
 
-const shouldInitSwiper = () => window.matchMedia('(min-width: 1200px)').matches;
+const shouldInitSwiper = () => window.matchMedia('(min-width: 768px)').matches;
 
 const initAboutSwiper = () => {
   const slider = document.querySelector('.about__swiper');
