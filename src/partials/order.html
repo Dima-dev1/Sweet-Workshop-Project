@@ -1,0 +1,42 @@
+<div class="modal-overlay is-open">
+  <div class="modal-order">
+    <button class="btn-exit" type="button">X</button>
+    <form class="form-order">
+      <h1 class="title-order">Оформлення замовлення</h1>
+      <label class="label-order">
+        Ім'я*
+        <input
+          class="input-order"
+          type="text"
+          name="user-name"
+          placeholder="Вікторія"
+          required
+        />
+        <span class="error-text"></span>
+      </label>
+      <label class="label-order">
+        Телефон*
+        <input
+          class="input-order"
+          type="tel"
+          name="user-tel"
+          placeholder="38 0_ ____"
+          required
+        />
+        <span class="error-text"></span>
+      </label>
+      <label class="label-order">
+        Коментар*
+        <textarea
+          class="textarea-order"
+          name="comment"
+          resize="horizontal"
+          placeholder="Ваш коментар"
+          required
+        ></textarea>
+        <span class="error-text"></span>
+      </label>
+      <button class="btn-order" type="submit">Надіслати заявку</button>
+    </form>
+  </div>
+</div>
