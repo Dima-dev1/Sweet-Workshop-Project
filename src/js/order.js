@@ -37,7 +37,7 @@ function hundleKey(event) {
     if (event.key !== "Escape") {
         return
     }
-    closeModal('68373276b9cd0c2f44a7744e')
+    closeModal()
     
 }
 
