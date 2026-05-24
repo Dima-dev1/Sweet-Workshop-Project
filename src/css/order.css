@@ -42,10 +42,13 @@ body.no-scroll {
     gap: 24px;
 
 }
-.btn-exit{
+.btn-exit {
+    background-color: transparent;
+    border: none;
     position: absolute;
     top: 16px;
     right: 16px;
+
 }
 
 .title-order {
@@ -80,6 +83,16 @@ body.no-scroll {
         line-height: 150%;
         color: var(--color-scheme-1-text);
 }
+
+.error-text{
+    font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: var(--red);
+
+}
+
 .input-order.error,
 .textarea-order.error{
     border: 2px solid var(--red);
@@ -91,18 +104,6 @@ font-family: var(--font-family);
     font-size: 16px;
     line-height: 150%;
     color: var(--opacity-neutral-darkest-60);
-}
-
-.input-order:focus,
- .textarea-order:focus{
-    outline: none;
-    border: 2px solid var(--color-wewak);
- }
-
-.input-order:hover, 
-.textarea-order:hover
-{
-    border: 2px solid var(--color-wewak);
 }
 
 .textarea-order {
@@ -126,6 +127,35 @@ border: 1px solid var(--color-wewak);
         
         cursor: pointer;
 } 
+
+.btn-order:hover, .btn-order:focus{
+    border: 2px solid var(--color-neutral-darkest);
+background-color: var(--opacity-transparent);
+}
+
+.btn-order:active{
+border: 2px solid var(--color-neutral-darkest);
+background-color: var(--color-wewak-light);
+}
+
+.input-order:active,
+.textarea-order:active{
+background-color: var(--opacity-transparent);
+border: 2px solid var(--color-neutral-darkest);
+}
+
+.input-order:focus,
+ .textarea-order:focus{
+    outline: none;
+    border: 2px solid var(--color-wewak);
+ }
+
+.input-order:hover, 
+.textarea-order:hover
+{
+    border: 2px solid var(--color-wewak);
+}
+
 @media (min-width:375px) {
     
 .modal-order {

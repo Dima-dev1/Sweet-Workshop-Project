@@ -9,7 +9,7 @@ const modalOverlay = document.querySelector('.modal-overlay')
 const form = document.querySelector('.form-order')
 
 
-function openModal(id) {
+export function openModal(id) {
     modalOverlay.classList.add('is-open')
     document.body.classList.add('no-scroll')
     form.dataset.id = id
@@ -20,14 +20,14 @@ function closeModal() {
     document.body.classList.remove('no-scroll')
 }
 
+
 modalOverlay.addEventListener('click', hundleClick)
 document.addEventListener('keydown', hundleKey)
 form.addEventListener('submit', hundleSubmit)
-
-openModal(`6852a9fcb459460cb6b47720`)
+form.addEventListener('input', hideError)
 
 function hundleClick(e) {
-    if (e.target === btnExit || e.target === modalOverlay) {
+    if (e.target.closest('.btn-exit') || e.target === btnExit || e.target === modalOverlay) {
         closeModal()
     }
 }
@@ -40,22 +40,50 @@ function hundleKey(event) {
     
 }
 
+  function hideError(ev) {
+        console.log((ev.target));
+        
+    ev.target.classList.remove('error')
+}
 async function hundleSubmit(event) {
     event.preventDefault()
-    const userName = event.target.elements['user-name'].value
-    const userTel = event.target.elements['user-tel'].value
-    const comment = event.target.elements.comment.value
+    const inpuName = event.target.elements['user-name']
+    const inpuPhone = event.target.elements['user-tel']
+    const textarea = event.target.elements.comment
+    const userName = inpuName.value
+    const userTel = inpuPhone.value
+    const comment = textarea.value
+
+    if (!userName.trim()) {
+          inpuName.nextElementSibling.hidden = false
+   inpuName.classList.add('error')
+    }
+    
+    const validPhone = userTel.replace(/\D/g, '')
+    if (validPhone.length !== 12) {
+        inpuPhone.nextElementSibling.hidden = false
+        inpuPhone.classList.add('error')
+    }
+    if (!comment.trim()) {
+        textarea.nextElementSibling.hidden = false
+        textarea.classList.add('error')
+    }
+      
+  console.log(validPhone);
+  
 
     const formData = {
         name: userName,
-  phone: userTel,
-  dessertId: form.dataset.id,
-  comment: comment,
+        phone: validPhone,
+        dessertId: '68373276b9cd0c2f44a7744e',
+        comment: comment,
     }
+console.log(formData);
 
     try {
         const response = await createOrder(formData)
         console.log(response);
+
 
         iziToast.show({
             message: 'Ваше замовлення успішно відправлено!',
