@@ -42,7 +42,7 @@
 .about__gallery-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1328px;
+    max-width: 1312px;
     margin: 0 auto;
     box-sizing: border-box;
     overflow: visible;
@@ -57,7 +57,7 @@
 }
 
 .about__slide {
-    width: 644px;
+    width: 100%;
     aspect-ratio: 644 / 478;
     flex-shrink: 0;
     border-radius: 16px;
@@ -193,7 +193,6 @@
 
     .about__slide {
         width: 100%;
-        max-width: 644px;
         margin-bottom: 24px;
     }
 
@@ -201,6 +200,8 @@
         display: flex;
         align-items: center;
     }
+
+    
 }
 
 @media only screen and (max-width: 1199px) {
