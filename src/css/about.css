@@ -314,4 +314,8 @@
   .about__nav-button {
       display: none !important;
   }
+
+  .about__pagination {
+      display: none !important;
+  }
 }
