@@ -14,7 +14,7 @@
     <script type="module" crossorigin src="/Sweet-Workshop/index.js"></script>
     <link rel="modulepreload" crossorigin href="/Sweet-Workshop/assets/vendor-DsWA7mrg.js">
     <link rel="stylesheet" crossorigin href="/Sweet-Workshop/assets/vendor-4701rORL.css">
-    <link rel="stylesheet" crossorigin href="/Sweet-Workshop/assets/index-BZ1JcEu3.css">
+    <link rel="stylesheet" crossorigin href="/Sweet-Workshop/assets/index-CXazRJSH.css">
   </head>
   <body>
     <header class="header">
@@ -34,7 +34,7 @@
       <!-- Loads the specified .html file -->
       
       
-      <section class="about" aria-labelledby="about-title">
+      <section class="about" aria-labelledby="about-title" id="about">
     <div class="container about__container">
         <div class="about__intro">
             <h2 class="about__title" id="about-title">Про нас</h2>
@@ -51,26 +51,57 @@
 
                 <div class="about__gallery swiper about__swiper">
                     <div class="swiper-wrapper">
+                    
                         <div class="swiper-slide about__slide">
-                            <img src="/Sweet-Workshop/assets/image1-desktop-1x-Cp8xizBN.png"
-                                srcset="/Sweet-Workshop/assets/image1-desktop-1x-Cp8xizBN.png 1x, /Sweet-Workshop/assets/image1-desktop-2x-BM9prhml.png 2x"
-                                alt="Приготування десертів у майстерні" />
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="/Sweet-Workshop/assets/image1-desktop-1x-Cp8xizBN.png 1x, /Sweet-Workshop/assets/image1-desktop-2x-BM9prhml.png 2x">
+                    
+                                <source media="(min-width: 768px)"
+                                    srcset="/Sweet-Workshop/assets/image1-tablet-1x-Di6zPIDi.png 1x, /Sweet-Workshop/assets/image1-tablet-2x-Be-hhMej.png 2x">
+                    
+                                <img src="/Sweet-Workshop/assets/image1-mobile-1x-CsOU55Qh.png"
+                                    srcset="/Sweet-Workshop/assets/image1-mobile-1x-CsOU55Qh.png 1x, /Sweet-Workshop/assets/image1-mobile-2x-BbqCNzYx.png 2x"
+                                    alt="Приготування десертів у майстерні" />
+                            </picture>
                         </div>
+                    
                         <div class="swiper-slide about__slide">
-                            <img src="/Sweet-Workshop/assets/image2-desktop-1x-Cnls2f6D.png"
-                                srcset="/Sweet-Workshop/assets/image2-desktop-1x-Cnls2f6D.png 1x, /Sweet-Workshop/assets/image2-desktop-2x-CoUn8ag8.png 2x"
-                                alt="Кондитери обговорюють десертне меню" />
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="/Sweet-Workshop/assets/image2-desktop-1x-Cnls2f6D.png 1x, /Sweet-Workshop/assets/image2-desktop-2x-CoUn8ag8.png 2x">
+                                <source media="(min-width: 768px)"
+                                    srcset="/Sweet-Workshop/assets/image2-tablet-1x-CMrELi7O.png 1x, /Sweet-Workshop/assets/image2-tablet-2x-dcV5QfAy.png 2x">
+                                <img src="/Sweet-Workshop/assets/image2-mobile-1x-CvZlLYQk.png"
+                                    srcset="/Sweet-Workshop/assets/image2-mobile-1x-CvZlLYQk.png 1x, /Sweet-Workshop/assets/image2-mobile-2x-BJasd9GJ.png 2x"
+                                    alt="Кондитери обговорюють десертне меню" />
+                            </picture>
                         </div>
+                    
                         <div class="swiper-slide about__slide">
-                            <img src="/Sweet-Workshop/assets/image3-desktop-1x-BQLCEhf4.png"
-                                srcset="/Sweet-Workshop/assets/image3-desktop-1x-BQLCEhf4.png 1x, /Sweet-Workshop/assets/image3-desktop-2x-CFA7rg0X.png 2x"
-                                alt="Готові десерти на виставці" />
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="/Sweet-Workshop/assets/image3-desktop-1x-BQLCEhf4.png 1x, /Sweet-Workshop/assets/image3-desktop-2x-CFA7rg0X.png 2x">
+                                <source media="(min-width: 768px)"
+                                    srcset="/Sweet-Workshop/assets/image3-tablet-1x-CPuF8meI.png 1x, /Sweet-Workshop/assets/image3-tablet-2x-C9kLU0Xh.png 2x">
+                                <img src="/Sweet-Workshop/assets/image3-mobile-1x-LduemDty.png"
+                                    srcset="/Sweet-Workshop/assets/image3-mobile-1x-LduemDty.png 1x, /Sweet-Workshop/assets/image3-mobile-2x-TqUgADjd.png 2x"
+                                    alt="Готові десерти на виставці" />
+                            </picture>
                         </div>
+                    
                         <div class="swiper-slide about__slide">
-                            <img src="/Sweet-Workshop/assets/image4-desktop-1x-pTQpDGgp.png"
-                                srcset="/Sweet-Workshop/assets/image4-desktop-1x-pTQpDGgp.png 1x, /Sweet-Workshop/assets/image4-desktop-2x-G4Hhp4cl.png 2x"
-                                alt="Десерти та атрибутика майстерні" />
+                            <picture>
+                                <source media="(min-width: 1200px)"
+                                    srcset="/Sweet-Workshop/assets/image4-desktop-1x-pTQpDGgp.png 1x, /Sweet-Workshop/assets/image4-desktop-2x-G4Hhp4cl.png 2x">
+                                <source media="(min-width: 768px)"
+                                    srcset="/Sweet-Workshop/assets/image4-tablet-1x-CQkHlQCf.png 1x, /Sweet-Workshop/assets/image4-tablet-2x-vkZJ3oBO.png 2x">
+                                <img src="/Sweet-Workshop/assets/image4-mobile-1x-RWYVxUsX.png"
+                                    srcset="/Sweet-Workshop/assets/image4-mobile-1x-RWYVxUsX.png 1x, /Sweet-Workshop/assets/image4-mobile-2x-DZ_mEgjc.png 2x"
+                                    alt="Десерти та атрибутика майстерні" />
+                            </picture>
                         </div>
+                    
                     </div>
                 </div>
 
