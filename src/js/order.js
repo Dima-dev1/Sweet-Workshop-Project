@@ -26,6 +26,7 @@ document.addEventListener('keydown', hundleKey)
 form.addEventListener('submit', hundleSubmit)
 form.addEventListener('input', hideError)
 
+
 function hundleClick(e) {
     if (e.target.closest('.btn-exit') || e.target === btnExit || e.target === modalOverlay) {
         closeModal()
@@ -36,12 +37,11 @@ function hundleKey(event) {
     if (event.key !== "Escape") {
         return
     }
-    closeModal()
+    closeModal('68373276b9cd0c2f44a7744e')
     
 }
 
   function hideError(ev) {
-        console.log((ev.target));
         
     ev.target.classList.remove('error')
 }
@@ -54,31 +54,38 @@ async function hundleSubmit(event) {
     const userTel = inpuPhone.value
     const comment = textarea.value
 
+    let hasError = false
+
     if (!userName.trim()) {
           inpuName.nextElementSibling.hidden = false
-   inpuName.classList.add('error')
+        inpuName.classList.add('error')
+        hasError = true
     }
     
     const validPhone = userTel.replace(/\D/g, '')
     if (validPhone.length !== 12) {
         inpuPhone.nextElementSibling.hidden = false
         inpuPhone.classList.add('error')
+        hasError = true
     }
     if (!comment.trim()) {
         textarea.nextElementSibling.hidden = false
         textarea.classList.add('error')
+        hasError = true
     }
       
-  console.log(validPhone);
+    if (hasError) {
+        return
+    }
   
 
     const formData = {
         name: userName,
         phone: validPhone,
-        dessertId: '68373276b9cd0c2f44a7744e',
+        dessertId: form.dataset.id,
         comment: comment,
     }
-console.log(formData);
+
 
     try {
         const response = await createOrder(formData)
