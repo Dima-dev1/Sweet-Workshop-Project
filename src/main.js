@@ -5,3 +5,4 @@ import './js/about.js';
 import './js/faq.js';
 import './js/feedback.js';
 import './js/order.js';
+import './js/footer.js'
