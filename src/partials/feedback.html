@@ -1,0 +1,49 @@
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweet-Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/feedback.css" />
+  </head>
+  <body>
+    <div class="feedback-container">
+      <div class="title-container">
+        <h2 class="title" id="feedbacks">Відгуки клієнтів</h2>
+        <p class="title-text">Найкращі десерти, які я коли-небудь куштував!</p>
+      </div>
+
+      <div class="slider-container-box">
+        <div class="card-wrapper swiper">
+          <button class="prev-btn">
+            <img
+              src="../img/arrow_back.svg"
+              alt="Назад"
+              width="48"
+              height="48"
+            />
+          </button>
+          <ul class="card-list swiper-wrapper"></ul>
+          <button class="next-btn">
+            <img
+              src="../img/arrow_forward.svg"
+              alt="Вперед"
+              width="48"
+              height="48"
+            />
+          </button>
+        </div>
+
+        <ul class="slider-list"></ul>
+      </div>
+    </div>
+
+    <script type="module" src="../js/feedback.js"></script>
+  </body>
+</html>
