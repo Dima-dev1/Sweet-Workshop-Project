@@ -30,9 +30,9 @@
       href="node_modules/css-star-rating/css/star-rating.css"
     />
     <script type="module" crossorigin src="/Sweet-Workshop/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/Sweet-Workshop/assets/vendor-C_SniCyD.js">
-    <link rel="stylesheet" crossorigin href="/Sweet-Workshop/assets/vendor--GjagqZh.css">
-    <link rel="stylesheet" crossorigin href="/Sweet-Workshop/assets/index-C5gCfP2b.css">
+    <link rel="modulepreload" crossorigin href="/Sweet-Workshop/assets/vendor-BtWoJCK7.js">
+    <link rel="stylesheet" crossorigin href="/Sweet-Workshop/assets/vendor-BT0ATv-8.css">
+    <link rel="stylesheet" crossorigin href="/Sweet-Workshop/assets/index-BbTk7z5u.css">
   </head>
   <body>
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -282,6 +282,32 @@ rel="stylesheet" /> -->
     </div>
 </section>
 
+      <div class="feedback-container">
+  <div class="title-container">
+    <h2 class="title" id="feedbacks">Відгуки клієнтів</h2>
+    <p class="title-text">Найкращі десерти, які я коли-небудь куштував!</p>
+  </div>
+
+  <div class="slider-container-box">
+    <div class="card-wrapper swiper">
+      <button class="prev-btn">
+        <img src="../img/arrow_back.svg" alt="Назад" width="48" height="48" />
+      </button>
+      <ul class="card-list swiper-wrapper"></ul>
+      <button class="next-btn">
+        <img
+          src="../img/arrow_forward.svg"
+          alt="Вперед"
+          width="48"
+          height="48"
+        />
+      </button>
+    </div>
+
+    <ul class="slider-list"></ul>
+  </div>
+</div>
+
       <section class="faq-section" id="faq">
   <div class="container">
     <h2 class="faq-header">Часті питання</h2>
@@ -443,32 +469,6 @@ rel="stylesheet" /> -->
     </ul>
   </div>
 </section>
-
-      <div class="feedback-container">
-  <div class="title-container">
-    <h2 class="title" id="feedbacks">Відгуки клієнтів</h2>
-    <p class="title-text">Найкращі десерти, які я коли-небудь куштував!</p>
-  </div>
-
-  <div class="slider-container-box">
-    <div class="card-wrapper swiper">
-      <button class="prev-btn">
-        <img src="../img/arrow_back.svg" alt="Назад" width="48" height="48" />
-      </button>
-      <ul class="card-list swiper-wrapper"></ul>
-      <button class="next-btn">
-        <img
-          src="../img/arrow_forward.svg"
-          alt="Вперед"
-          width="48"
-          height="48"
-        />
-      </button>
-    </div>
-
-    <ul class="slider-list"></ul>
-  </div>
-</div>
 
     </main>
 
@@ -642,8 +642,44 @@ rel="stylesheet" /> -->
 </footer>
 
 
-    
-    <div class="modal-overlay">
+    <div class="modal-overlay js-modal-overlay hidden">
+  <div class="modal-dessert">
+    <button class="modal-close-btn js-modal-close" type="button">✕</button>
+
+    <div class="modal-container">
+      <div class="modal-content">
+        <img
+          class="modal-img js-modal-img"
+          src=""
+          alt=""
+          width="580"
+          height="435"
+        />
+
+        <div class="modal-info">
+          <h2 class="modal-title js-modal-title"></h2>
+
+          <p class="modal-price js-modal-price"></p>
+
+          <div class="modal-stars js-modal-stars"></div>
+
+          <p class="modal-desc js-modal-desc"></p>
+
+          <p class="modal-composition">
+            <strong>Склад:</strong>
+            <span class="js-modal-composition"></span>
+          </p>
+
+          <button class="js-go-to-order" type="button">
+            Перейти до замовлення
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="modal-overlay js-order-overlay">
   <div class="modal-order">
     <button class="btn-exit" type="button">
       <svg
