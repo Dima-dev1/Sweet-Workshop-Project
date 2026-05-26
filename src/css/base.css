@@ -68,4 +68,5 @@ body {
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
+  background-color: var(--color-ice-cold-lightest);
 }
