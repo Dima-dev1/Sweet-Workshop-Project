@@ -1,6 +1,5 @@
 import { openDessertModal } from './dessertDetails.js';
 import { getCategories } from './services/api/getCategories';
-import { getDessertById } from './services/api/getDessertById';
 import { getAllDesserts } from './services/api/getAllDesserts';
 
 let currentPage = 1;
@@ -153,10 +152,9 @@ if (getLoadMoreBtn) {
 }
 
 loadCategories();
-
 loadDesserts();
 
-document.querySelector('#dessert-id').addEventListener('click', e => {
+document.addEventListener('click', e => {
   const btn = e.target.closest('.open-modal-btn');
   if (!btn) return;
   openDessertModal(btn.dataset.id);

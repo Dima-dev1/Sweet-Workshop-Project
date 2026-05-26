@@ -4,7 +4,7 @@ import { createOrder } from './services/api/createOrder';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const btnExit = document.querySelector('.btn-exit');
-const modalOverlay = document.querySelector('.modal-overlay');
+const modalOverlay = document.querySelector('.js-order-overlay');
 const form = document.querySelector('.form-order');
 
 export function openModal(id) {

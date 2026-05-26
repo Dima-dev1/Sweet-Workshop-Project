@@ -3,6 +3,10 @@
     display: none !important;
 }
 
+.js-modal-overlay {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
 
 .modal-overlay {
     position: fixed;

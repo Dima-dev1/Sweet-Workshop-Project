@@ -1,8 +1,5 @@
 import { getDessertById } from './services/api/getDessertById.js';
-import { openModal } from './order.js';
 
-const overlay = document.querySelector('.js-modal-overlay');
-const closeBtn = document.querySelector('.js-modal-close');
 let currentDessertId = null;
 
 export async function openDessertModal(id) {
@@ -22,30 +19,16 @@ export async function openDessertModal(id) {
       dessert.rate
     );
 
-    overlay.classList.remove('hidden');
+    document.querySelector('.js-modal-overlay').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   } catch (error) {
     console.error(error);
   }
 }
 
-document.querySelector('.js-go-to-order').addEventListener('click', () => {
-  closeModal();
-  openModal(currentDessertId);
-});
-
-closeBtn.addEventListener('click', closeModal);
-
-overlay.addEventListener('click', e => {
-  if (e.target === overlay) closeModal();
-});
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
-
 function closeModal() {
-  overlay.classList.add('hidden');
+  const overlay = document.querySelector('.js-modal-overlay');
+  if (overlay) overlay.classList.add('hidden');
   document.body.style.overflow = '';
 }
 
@@ -62,3 +45,31 @@ function renderStars(rating) {
 
   return `<div class="rating"><div class="star-container">${starsHTML}</div></div>`;
 }
+
+setTimeout(() => {
+  const closeBtn = document.querySelector('.js-modal-close');
+  const overlay = document.querySelector('.js-modal-overlay');
+  const goToOrderBtn = document.querySelector('.js-go-to-order');
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+  if (overlay) {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) closeModal();
+    });
+  }
+
+  if (goToOrderBtn) {
+    goToOrderBtn.addEventListener('click', () => {
+      closeModal();
+      // dynamically import to avoid circular dependency
+      import('./order.js').then(({ openModal }) => {
+        openModal(currentDessertId);
+      });
+    });
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
