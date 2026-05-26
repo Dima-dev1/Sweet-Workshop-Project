@@ -72,7 +72,7 @@ async function loadDesserts(categoryId = null, isLoadMore = false) {
         return `
           <li class="dessert-card">
             <div class="dessert-img-thumb">
-                <img src="${image}" alt="${name}" class="dessert-img"/>
+                <img src="${image}" alt="${name}" class="dessert-img" loading="lazy"/>
             </div>
             
             <div class="dessert-card-content">

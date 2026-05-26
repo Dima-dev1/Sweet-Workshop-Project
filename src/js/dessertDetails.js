@@ -3,72 +3,66 @@ import { getDessertById } from './services/api/getDessertById.js';
 let currentDessertId = null;
 
 export async function openDessertModal(id) {
+  currentDessertId = id;
+
   try {
-    currentDessertId = id;
     const dessert = await getDessertById(id);
+    fillModal(dessert);
+    showModal();
+  } catch {}
+}
 
-    document.querySelector('.js-modal-img').src = dessert.image;
-    document.querySelector('.js-modal-img').alt = dessert.name;
-    document.querySelector('.js-modal-title').textContent = dessert.name;
-    document.querySelector('.js-modal-price').textContent =
-      `${dessert.price} грн`;
-    document.querySelector('.js-modal-desc').textContent = dessert.description;
-    document.querySelector('.js-modal-composition').textContent =
-      dessert.composition;
-    document.querySelector('.js-modal-stars').innerHTML = renderStars(
-      dessert.rate
-    );
+function fillModal(dessert) {
+  document.querySelector('.js-modal-img').src = dessert.image;
+  document.querySelector('.js-modal-img').alt = dessert.name;
+  document.querySelector('.js-modal-title').textContent = dessert.name;
+  document.querySelector('.js-modal-price').textContent =
+    `${dessert.price} грн`;
+  document.querySelector('.js-modal-desc').textContent = dessert.description;
+  document.querySelector('.js-modal-composition').textContent =
+    dessert.composition;
+  document.querySelector('.js-modal-stars').innerHTML = renderStars(
+    dessert.rate
+  );
+}
 
-    document.querySelector('.js-modal-overlay').classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  } catch (error) {
-    console.error(error);
-  }
+function showModal() {
+  document.querySelector('.js-modal-overlay').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
-  const overlay = document.querySelector('.js-modal-overlay');
-  if (overlay) overlay.classList.add('hidden');
+  document.querySelector('.js-modal-overlay').classList.add('hidden');
   document.body.style.overflow = '';
 }
 
 function renderStars(rating) {
-  const fullStars = Math.floor(rating);
-  const hasHalf = rating % 1 >= 0.5;
-  const emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
+  const full = Math.floor(rating);
+  const half = rating % 1 >= 0.5;
+  const empty = 5 - full - (half ? 1 : 0);
 
-  let starsHTML = '';
-  for (let i = 0; i < fullStars; i++) starsHTML += `<div class="star"></div>`;
-  if (hasHalf) starsHTML += `<div class="star half"></div>`;
-  for (let i = 0; i < emptyStars; i++)
-    starsHTML += `<div class="star empty"></div>`;
+  const star = type => `<div class="star ${type}"></div>`;
+  const stars = [
+    ...Array(full).fill(star('')),
+    ...(half ? [star('half')] : []),
+    ...Array(empty).fill(star('empty')),
+  ].join('');
 
-  return `<div class="rating"><div class="star-container">${starsHTML}</div></div>`;
+  return `<div class="rating"><div class="star-container">${stars}</div></div>`;
 }
 
 setTimeout(() => {
-  const closeBtn = document.querySelector('.js-modal-close');
   const overlay = document.querySelector('.js-modal-overlay');
-  const goToOrderBtn = document.querySelector('.js-go-to-order');
+  const closeBtn = document.querySelector('.js-modal-close');
+  const orderBtn = document.querySelector('.js-go-to-order');
 
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-  if (overlay) {
-    overlay.addEventListener('click', e => {
-      if (e.target === overlay) closeModal();
-    });
-  }
-
-  if (goToOrderBtn) {
-    goToOrderBtn.addEventListener('click', () => {
-      closeModal();
-      // dynamically import to avoid circular dependency
-      import('./order.js').then(({ openModal }) => {
-        openModal(currentDessertId);
-      });
-    });
-  }
-});
+  closeBtn?.addEventListener('click', closeModal);
+  overlay?.addEventListener('click', e => e.target === overlay && closeModal());
+  orderBtn?.addEventListener('click', () => {
+    closeModal();
+    import('./order.js').then(({ openModal }) => openModal(currentDessertId));
+  });
+}, 0);
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();

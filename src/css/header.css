@@ -121,8 +121,8 @@
 
 .mobile-menu-close {
   position: absolute;
-  top: 30px;
-  right: 75px;
+  top: 16px;
+  right: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -200,7 +200,7 @@
   outline: none;
 }
      
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 
   .nav-list,
   .btn-link {
