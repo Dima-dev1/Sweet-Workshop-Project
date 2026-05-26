@@ -20,7 +20,6 @@ async function fetchFeedbacks() {
     renderFeedbacks(feedbacks);
     initFeedbackSlider();
   } catch (error) {
-    console.log('Помилка при завантаженні відгуків:', error);
     cardList.innerHTML =
       '<li class="error">Не вдалося завантажити відгуки.</li>';
   }
