@@ -1,21 +1,119 @@
 .footer {
-  padding: 20px 0;
+  background-color: var(--color-scheme-3-background);
 }
-.footer-desc {
-  text-align: center;
+
+.footer-container {
+  padding: 48px 20px;
 }
+
+
+.icon-footer {
+  margin: 0 auto;
+  width: 160px;
+}
+
+.logo-link {
+  display: block;
+  width: 100%;
+}
+
+.icon-footer svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 0;
+}
+
 .footer-link {
-  position: relative;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--color-scheme-3-text);
+  transition: color 250ms ease;
 }
-.footer-link::before {
-  content: '';
-  position: absolute;
-  bottom: 6%;
-  left: 50%;
-  transform: translateX(-50%) skewX(-12deg);
-  z-index: -1;
-  width: 110%;
-  height: 24%;
-  background-color: #41d1ff;
-  transition: 200ms ease;
+
+.footer-link:hover,
+.footer-link:focus {
+  border-bottom: 1px solid var(--color-neutral-darkest);
+}
+
+.footer-link:active {
+  border: none;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--color-wewak);
+}
+
+
+.soc-list {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-bottom: 40px;
+}
+
+.soc-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.footer-desc {
+  width: 100%;
+  padding-top: 32px;
+  border-top: 2px solid var(--color-scheme-3-border);
+
+  text-align: center;
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--color-scheme-3-text);
+}
+
+
+@media screen and (min-width: 768px) {
+  .icon-footer {
+    width: 309px;
+  }
+
+  .footer-desc {
+    min-width: 339px;
+  }
+}
+
+
+@media screen and (min-width: 1440px) {
+  .footer-container {
+    padding: 40px 64px;
+  }
+
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .soc-list {
+    padding-bottom: 0;
+  }
+
+  .icon-footer {
+    margin: 0;
+  }
 }
