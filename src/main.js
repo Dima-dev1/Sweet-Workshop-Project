@@ -1,5 +1,6 @@
 import './js/header.js';
 import './js/hero.js';
+import './js/dessertDetails.js';
 import './js/dessertList.js';
 import './js/about.js';
 import './js/faq.js';

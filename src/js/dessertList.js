@@ -1,90 +1,154 @@
-import { getDessertById } from './services/api/getDessertById.js';
+	
+import { getCategories } from "./services/api/getCategories";
+import { getDessertById } from "./services/api/getDessertById";
+import { getAllDesserts } from "./services/api/getAllDesserts";
 
-const overlay = document.querySelector('.js-modal-overlay');
+let currentPage = 1;
+let currentCategory = null;
+const perPage = 8;
 
-const closeBtn = document.querySelector('.js-modal-close');
+     const getList = document.querySelector("#dessert-id");
+const getLoadMoreBtn = document.querySelector(".load-more-btn")
 
-export async function openDessertModal(id) {
-  try {
-    const dessert = await getDessertById(id);
+async function loadCategories() {
 
-    document.querySelector('.js-modal-img').src = dessert.image;
+	try {
+		const categoriesData = await getCategories();
+		const selectContainer = document.querySelector('.categories-select');
+		const desktopContainer = document.querySelector('.container-categories-btn');
+		
+		if (selectContainer) {
+			const optionsMarkup = categoriesData.map(cat => {
+				return `<option value="${cat._id}">${cat.name}</option>`
+			}).join("");
+			selectContainer.innerHTML = '<option value="">Всі десерти</option>' + optionsMarkup;
+		}
 
-    document.querySelector('.js-modal-img').alt = dessert.name;
-
-    document.querySelector('.js-modal-title').textContent = dessert.name;
-
-    document.querySelector('.js-modal-price').textContent =
-      `${dessert.price} грн`;
-
-    document.querySelector('.js-modal-desc').textContent = dessert.description;
-
-    document.querySelector('.js-modal-composition').textContent =
-      dessert.composition;
-
-    document.querySelector('.js-modal-stars').innerHTML = renderStars(
-      dessert.rate
-    );
-
-    overlay.classList.remove('hidden');
-
-    document.body.style.overflow = 'hidden';
-  } catch (error) {
-    console.log(error);
-  }
+	if (desktopContainer) {
+            const buttonsMarkup = categoriesData.map(cat => {
+                return `<li><button class="category-btn" data-id="${cat._id}">${cat.name}</button></li>`;
+            }).join('');
+            desktopContainer.innerHTML = '<li><button class="category-btn active" data-id="">Всі десерти</button></li>' + buttonsMarkup;
+		}
+		
+	} catch (error) {
+		iziToast.error({
+                title: 'Помилка',
+                message: 'Не вдалося завантажити десерти. Спробуйте пізніше.',
+                position: 'topRight',
+                transitionIn: 'fadeInLeft'
+            });
+		
+	}
 }
 
-closeBtn.addEventListener('click', closeModal);
 
-overlay.addEventListener('click', e => {
-  if (e.target === overlay) {
-    closeModal();
-  }
-});
+async function loadDesserts(categoryId = null, isLoadMore = false) {
+	const loader = document.querySelector('.loader');
+	if (loader) loader.classList.remove('is-hidden')
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    closeModal();
-  }
-});
+	try {
+		if (!isLoadMore) {
+			currentPage = 1;
+			currentCategory = categoryId;
+		}
 
-function closeModal() {
-  overlay.classList.add('hidden');
+		const params = {
+			page: currentPage,
+			limit: perPage
+		};
+		if (categoryId && categoryId.trim() !== "") {
+			params.category = categoryId;
+		}
+		const dessertsData = await getAllDesserts(params);
+		if (!getList) return;
 
-  document.body.style.overflow = '';
+		const markupDesert = dessertsData.desserts.map(({ _id, image, name, category, description, price }) => {
+			return `
+          <li class="dessert-card">
+            <div class="dessert-img-thumb">
+                <img src="${image}" alt="${name}" class="dessert-img"/>
+            </div>
+            
+            <div class="dessert-card-content">
+                <p class="dessert-category-card">${category.name}</p>
+                <h3 class="dessert-title-card">${name}</h3>
+                <p class="description-dessert">${description}</p>
+                
+                <div class="dessert-card-footer">
+                    <p class="dessert-price">Ціна: <span>${price} грн</span></p>
+                    
+                    <button type="button" class="open-modal-btn" data-id="${_id}">
+                     <svg class="modal-btn-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
+    </svg>
+                    </button>
+                </div>
+            </div>
+        </li>
+            `;
+		}).join('');
+
+
+		if (isLoadMore) {
+			getList.insertAdjacentHTML('beforeend', markupDesert);
+		} else {
+			getList.innerHTML = markupDesert;
+		}
+	
+		const totalLoader = currentPage * perPage;
+		if (getLoadMoreBtn) {
+			if (totalLoader >= dessertsData.totalItems) {
+				getLoadMoreBtn.style.display = 'none';
+			} else {
+				getLoadMoreBtn.style.display = 'block'
+			}
+		}
+
+	} catch (error) {
+		if (typeof iziToast !== 'undefined') {
+			iziToast.error({
+				title: 'Помилка',
+				message: 'Не вдалося завантажити десерти. Спробуйте пізніше.',
+				position: 'topRight',
+				transitionIn: 'fadeInLeft'
+			});
+		}
+	} finally {
+		if(loader) loader.classList.add('is-hidden')
+	}
+
+}
+const mobileSelect = document.querySelector('.categories-select');
+if (mobileSelect) {
+    mobileSelect.addEventListener('change', async (event) => {
+        const selectedCategoryId = event.target.value;
+        await loadDesserts(selectedCategoryId);
+    });
+}
+const desktopBtn = document.querySelector('.container-categories-btn')
+	if (desktopBtn) {
+		desktopBtn.addEventListener('click', async (event) => {
+			const clickedBtn = event.target.closest('button');
+			if (!clickedBtn) return;
+
+			const currentActive = desktopBtn.querySelector('.category-btn.active');
+        if (currentActive) currentActive.classList.remove('active');
+			clickedBtn.classList.add('active');
+			
+			await loadDesserts(clickedBtn.dataset.id);
+		});
+	}
+
+if (getLoadMoreBtn) {
+    getLoadMoreBtn.addEventListener('click', async () => {
+        currentPage += 1; 
+        await loadDesserts(currentCategory, true); 
+    });
 }
 
-function renderStars(rating) {
-  const fullStars = Math.floor(rating);
+loadCategories();
 
-  const hasHalf = rating % 1 >= 0.5;
+loadDesserts();
 
-  const totalStars = 5;
-
-  let starsHTML = '';
-
-  for (let i = 0; i < fullStars; i++) {
-    starsHTML += `<div class="star"></div>`;
-  }
-
-  if (hasHalf) {
-    starsHTML += `<div class="star half"></div>`;
-  }
-
-  const emptyStars = totalStars - fullStars - (hasHalf ? 1 : 0);
-
-  for (let i = 0; i < emptyStars; i++) {
-    starsHTML += `<div class="star empty"></div>`;
-  }
-
-  return `
-    <div class="rating">
-      <div class="star-container">
-        ${starsHTML}
-      </div>
-    </div>
-  `;
-}
-
-// TEST
-openDessertModal('6852a9fcb459460cb6b47723');
