@@ -1,7 +1,10 @@
+.dessert-list, .dessert-title {
+  font-family: "Comfortaa", sans-serif;
+}
 .dessert-section {
   padding-top: 40px;
   padding-bottom: 60px;
-background: var(--color-scheme-1-background);
+  background: var(--color-scheme-1-background);
 }
 
 .dessert-container {
@@ -15,7 +18,7 @@ background: var(--color-scheme-1-background);
 }
 
 .dessert-title {
-  font-family: inherit;
+  padding-top: 80px;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
@@ -25,7 +28,6 @@ background: var(--color-scheme-1-background);
 }
 
 .dessert-subtitle {
-  font-family: inherit;
   font-size: 16px;
   line-height: 1.5;
   color: var(--color-neutral-dark);
@@ -90,6 +92,7 @@ background: var(--color-scheme-1-background);
   border-radius: 20px;
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: var(--color-scheme-1-background);
 }
 
 .dessert-card:hover {
@@ -171,6 +174,7 @@ background: var(--color-scheme-1-background);
   color: var(--color-neutral-darkest);
   cursor: pointer;
   transition: background-color 0.25s ease, transform 0.2s ease;
+  background: var(--color-scheme-1-background);
 }
 
 .modal-btn-svg {
@@ -284,6 +288,7 @@ background: var(--color-scheme-1-background);
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.25s ease;
+    background: var(--color-scheme-1-background);
   }
 
   .category-btn:hover,
