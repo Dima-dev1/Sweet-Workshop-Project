@@ -4,7 +4,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { getFeedbacks } from '/js/services/api/getFeedbacks';
+import { getFeedbacks } from './services/api/getFeedbacks.js';
 
 const cardList = document.querySelector('.card-list');
 
