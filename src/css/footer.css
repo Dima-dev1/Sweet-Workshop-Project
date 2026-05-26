@@ -67,6 +67,12 @@
   justify-content: center;
 }
 
+ .soc-link:hover,
+ .soc-link:focus {
+   opacity: 0.7;
+   transform: scale(1.1);
+ }
+
 
 .footer-desc {
   width: 100%;
