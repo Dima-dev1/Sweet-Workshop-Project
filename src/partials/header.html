@@ -28,16 +28,16 @@ rel="stylesheet" />
     <nav class="page-nav">
       <ul class="nav-list">
         <li>
-          <a class="nav-link" href="">Солодощі</a>
+          <a class="nav-link" href="#dessert-section">Солодощі</a>
         </li>
         <li>
-          <a class="nav-link" href="">Про нас</a>
+          <a class="nav-link" href="#about">Про нас</a>
         </li>
         <li>
-          <a class="nav-link" href="">Відгуки</a>
+          <a class="nav-link" href="#feedbacks">Відгуки</a>
         </li>
         <li>
-          <a class="nav-link" href="">Часті питання</a>
+          <a class="nav-link" href="#faq">Часті питання</a>
         </li>
         <li>
           <a class="nav-link btn-link" href="">До покупок</a>
@@ -90,43 +90,12 @@ rel="stylesheet" />
       <nav class="mobile-menu-nav">
         <ul class="mobile-nav-list">
           <li><a class="mobile-menu-link" href="#dessert-section">Солодощі</a></li>
-          <li><a class="mobile-menu-link" href="">Про нас</a></li>
+          <li><a class="mobile-menu-link" href="#about">Про нас</a></li>
           <li><a class="mobile-menu-link" href="#feedbacks">Відгуки</a></li>
-          <li><a class="mobile-menu-link" href="">Часті питання</a></li>
+          <li><a class="mobile-menu-link" href="#faq">Часті питання</a></li>
         </ul>
         <button class="mobile-menu-btn">До покупок</button>
       </nav>
     </div>
   </div>
-
- 
-<script>
-  const burgerBtn = document.querySelector('.burger-btn'); 
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const closeBtn = document.querySelector('.mobile-menu-close'); 
-  const menuLinks = document.querySelectorAll('.mobile-menu-link');
-  const shopBtn = document.querySelector('.btn-link'); 
-
-  burgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('is-open');
-    document.body.style.overflow = 'hidden'; 
-  });
-
-  closeBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('is-open');
-    document.body.style.overflow = '';
-  });
-
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('is-open');
-      document.body.style.overflow = '';
-    });
-  });
-
-  shopBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('is-open');
-    document.body.style.overflow = '';
-  });
-</script>
 </body>
