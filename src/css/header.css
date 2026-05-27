@@ -8,6 +8,7 @@
 
 .page-header {
   background-color: #f5fdfd;
+  padding: 16px 0;
 }
 .logo-wrapper {
   display: flex;
@@ -56,14 +57,11 @@
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  height: 72px;
+  padding: 0 20px;
 }
-.nav-logo-text {
-  font-family: "Comfortaa", sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  padding-bottom: 14px;
-}
+
 
 .btn-link {
   width: 133px;
@@ -205,33 +203,55 @@
   background-color: transparent;
   outline: none;
 }
+     
+@media screen and (max-width: 768px) {
 
-@media screen and (min-width: 768px) {
-.page-nav {
-  display: flex;
+  .nav-list,
+  .btn-link {
+    display: none;
+  }
+
+  .burger-icon {
+    display: block;
+  }
+
+  .header-container {
+    padding: 0 20px;
+  }
 }
 
-.nav-list-header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 16px;
-}
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
 
 .burger-btn {
   display: none;
 }
 
-.header-container {
-  justify-content: space-between;
-}
+  .header-container {
+    justify-content: space-between;
+    padding: 0 32px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-.nav-list-header {
-  gap: 32px;
-}
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+
+  .burger-btn{
+    display: none;
+  }
+
+  .header-container {
+    padding: 0 64px;
+  }
 }
 
 
