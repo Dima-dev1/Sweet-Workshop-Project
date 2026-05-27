@@ -10,7 +10,7 @@ import{a as O,S as M,A as D,N as I,P as R,i as $}from"./assets/vendor-DqqJ2FKH.j
                 <p class="description-dessert">${l}</p>
                 
                 <div class="dessert-card-footer">
-                    <p class="dessert-price">Ціна: <span>${L} грн</span></p>
+                    <p class="dessert-price"><span>${L} грн</span></p>
                     
                     <button type="button" class="open-modal-btn" data-id="${a}">
                      <svg class="modal-btn-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
