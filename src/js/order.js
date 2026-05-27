@@ -7,7 +7,7 @@ import "izitoast/dist/css/iziToast.min.css";
 const btnExit = document.querySelector('.btn-exit')
 const modalOverlay = document.querySelector('.modal-overlay')
 const form = document.querySelector('.form-order')
-
+const formElements = form.querySelectorAll('input, textarea')
 
 export function openModal(id) {
     modalOverlay.classList.add('is-open')
@@ -15,11 +15,17 @@ export function openModal(id) {
     form.dataset.id = id
     
 }
+
 function closeModal() {
     modalOverlay.classList.remove('is-open')
-    document.body.classList.remove('no-scroll')
+  document.body.classList.remove('no-scroll')
+  form.reset()
+  formElements.forEach(el => {
+    el.nextElementSibling.hidden = true 
+    el.classList.remove('error')
+  }
+) 
 }
-
 
 modalOverlay.addEventListener('click', hundleClick)
 document.addEventListener('keydown', hundleKey)
@@ -44,6 +50,9 @@ function hundleKey(event) {
   function hideError(ev) {
         
     ev.target.classList.remove('error')
+    if (ev.target.nextElementSibling) {
+        ev.target.nextElementSibling.hidden = true // <-- додай
+    }
 }
 async function hundleSubmit(event) {
     event.preventDefault()
