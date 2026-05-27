@@ -25,6 +25,7 @@
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .card-list.swiper-wrapper {
