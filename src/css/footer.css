@@ -123,3 +123,28 @@
     margin: 0;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .footer-container {
+    padding: 48px 32px;
+    /* layout: logo top center, nav row, socials row, divider, copyright */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon-footer {
+    width: 309px;
+    margin-bottom: 32px;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 32px;
+    padding: 0 0 32px 0;
+  }
+
+  .soc-list {
+    padding-bottom: 32px;
+  }
+}
