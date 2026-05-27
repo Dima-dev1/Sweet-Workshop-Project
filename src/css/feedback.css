@@ -164,7 +164,6 @@
 }
 
 .title-container p {
-  font-family: 'Work Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -175,7 +174,7 @@
 }
 
 .title {
-  font-family: 'Comfortaa', sans-serif;
+  font-family: var(--second-family);
   font-weight: 700;
   font-size: 48px;
   line-height: 1.2;
@@ -185,7 +184,6 @@
 }
 
 .review-text {
-  font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -193,7 +191,6 @@
 }
 
 .review-author {
-  font-family: 'Work Sans', sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.33;
@@ -207,11 +204,11 @@
     max-width: 100%;
     box-sizing: border-box;
     padding: 0 24px;
-    overflow: hidden;
+    overflow: visible;
     margin: 40px auto 0 auto;
   }
   .feedback-container {
-    min-width: 768px;
+    min-width: unset;
     padding: 64px;
   }
   .card-wrapper.swiper {
@@ -219,7 +216,7 @@
     max-width: 100%;
     padding: 0;
     box-sizing: border-box;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .card-item.swiper-slide {
@@ -308,12 +305,16 @@
     pointer-events: none;
   }
 
-  .card-wrapper.swiper {
-    position: relative !important;
-    width: 100% !important;
-    padding: 0 !important;
-    overflow: visible !important;
-  }
+    .card-wrapper.swiper {
+      position: relative !important;
+      width: 100% !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+
+    .slider-container-box {
+      overflow: hidden;
+    }
 
   .card-item {
     padding: 32px !important;

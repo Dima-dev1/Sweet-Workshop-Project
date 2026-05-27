@@ -38,14 +38,13 @@
     box-sizing: border-box;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
-
 
 .modal-container {
     width: 1184px;
     height: auto;
-    max-width: 1312px;
+    max-width: 100%;
 }
 
 
@@ -55,6 +54,7 @@
     column-gap: 24px;
 
     width: 1184px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -74,6 +74,7 @@
     .modal-dessert {
         padding: 24px;
         max-height: calc(100vh - 48px);
+        overflow-y: auto;
     }
 
     .modal-content {
@@ -118,7 +119,7 @@
 .modal-title {
     margin: 0 0 16px;
 
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--second-family);
     font-weight: 700;
     font-size: 40px;
     line-height: 1.2;
@@ -131,7 +132,7 @@
 .modal-price {
     margin: 0 0 16px;
 
-    font-family: "Comfortaa", sans-serif;
+    font-family: var(--second-family);
     font-weight: 700;
     font-size: 24px;
     line-height: 1.4;
@@ -188,8 +189,6 @@
 
 .modal-desc {
     margin: 0 0 16px;
-
-    font-family: "Work Sans", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
@@ -200,8 +199,6 @@
 
 .modal-composition {
     margin: 0 0 32px;
-
-    font-family: "Work Sans", sans-serif;
     font-size: 14px;
     line-height: 1.5;
 
@@ -228,7 +225,6 @@
 
     background: #f19898;
 
-    font-family: "Work Sans", sans-serif;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;

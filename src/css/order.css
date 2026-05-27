@@ -178,7 +178,7 @@ border: 2px solid var(--color-neutral-darkest);
     
     .modal-order{
 padding: 64px 32px;
-min-width: 704px;
+min-width: unset;
 max-width: 768px;
     }
     
@@ -187,7 +187,7 @@ max-width: 768px;
     }
 
     .input-order, .textarea-order{
-min-width: 640px;
+width: 100%;
 
     }
 
