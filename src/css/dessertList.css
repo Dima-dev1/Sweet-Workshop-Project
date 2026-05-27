@@ -1,7 +1,7 @@
 .dessert-section {
   padding-top: 40px;
   padding-bottom: 60px;
-background: var(--color-scheme-1-background);
+  background: var(--color-scheme-1-background);
 }
 
 .dessert-container {
@@ -15,27 +15,27 @@ background: var(--color-scheme-1-background);
 
 @media screen and (min-width: 375xp) {
   .dessert-container {
-max-width: 375px;
+    max-width: 375px;
   }
 }
 
 .dessert-title {
- font-family: var(--second-family);
+  font-family: var(--second-family);
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
-color: var(--color-scheme-1-text);
+  color: var(--color-scheme-1-text);
   margin: 0 0 12px 0;
   text-align: center;
 }
 
 .dessert-subtitle {
- font-family: var(--font-family);
+  font-family: var(--font-family);
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
-color: var(--color-scheme-1-text);
+  color: var(--color-scheme-1-text);
   margin: 0 16px 32px 0;
   text-align: center;
 }
@@ -57,7 +57,7 @@ color: var(--color-scheme-1-text);
   font-size: 16px;
   font-weight: 500;
   color: var(--color-neutral-darkest);
-background: var(--opacity-transparent);
+  background: var(--opacity-transparent);
   border: 2px solid var(--color-neutral-darker);
   border-radius: 6px;
   appearance: none;
@@ -98,9 +98,11 @@ background: var(--opacity-transparent);
   background-color: var(--color-white);
   border: 1px solid var(--color-neutral-darkest);
   border-radius: 20px;
-box-sizing: border-box;
+  box-sizing: border-box;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .dessert-card:hover {
@@ -124,7 +126,7 @@ box-sizing: border-box;
 .dessert-card-content {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; 
+  flex-grow: 1;
   padding: 20px;
 }
 
@@ -133,7 +135,7 @@ box-sizing: border-box;
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
-color: var(--color-scheme-1-text);
+  color: var(--color-scheme-1-text);
   margin: 0 0 8px 0;
 }
 
@@ -142,7 +144,7 @@ color: var(--color-scheme-1-text);
   font-size: 18px;
   font-weight: 600;
   line-height: 150%;
- color: var(--color-scheme-1-text);
+  color: var(--color-scheme-1-text);
   margin: 0 0 10px 0;
 }
 
@@ -151,7 +153,7 @@ color: var(--color-scheme-1-text);
   font-weight: 400;
   font-size: 14px;
   line-height: 1.5;
-color: var(--color-scheme-1-text);
+  color: var(--color-scheme-1-text);
   margin: 0 0 20px 0;
   flex-grow: 1;
 }
@@ -160,18 +162,17 @@ color: var(--color-scheme-1-text);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto; 
+  margin-top: auto;
 }
 
 .dessert-price {
- font-family: var(--font-family);
-font-weight: 600;
-font-size: 20px;
-line-height: 150%;
-color: var(--color-scheme-1-text);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--color-scheme-1-text);
   margin: 0;
 }
-
 
 .open-modal-btn {
   display: flex;
@@ -184,7 +185,9 @@ color: var(--color-scheme-1-text);
   border-radius: 50%;
   color: var(--color-neutral-darkest);
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease;
 }
 
 .modal-btn-svg {
@@ -199,11 +202,10 @@ color: var(--color-scheme-1-text);
 }
 
 @media screen and (min-width: 768px) {
-
-#dessert-section {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
+  #dessert-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 
   .dessert-container {
     max-width: 768px;
@@ -212,7 +214,6 @@ color: var(--color-scheme-1-text);
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-  
   }
 
   .dessert-title {
@@ -231,8 +232,8 @@ color: var(--color-scheme-1-text);
   .categories-filter-wrapper {
     grid-column: 2;
     grid-row: 2;
-  margin-top: 0;
-   width: auto;
+    margin-top: 0;
+    width: auto;
     margin-bottom: 40px;
   }
 
@@ -243,7 +244,6 @@ color: var(--color-scheme-1-text);
   .dessert-list {
     grid-column: 1 / span 2;
     grid-template-columns: repeat(2, 1fr);
-
   }
 
   .load-more-btn {
@@ -252,7 +252,6 @@ color: var(--color-scheme-1-text);
 }
 
 @media screen and (min-width: 1440px) {
-
   #dessert-section {
     padding-top: 80px;
     padding-bottom: 90px;
@@ -268,12 +267,13 @@ color: var(--color-scheme-1-text);
   .dessert-title {
     text-align: center;
     font-size: 48px;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
   }
 
   .dessert-subtitle {
+    max-width: 100%;
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
 
   .categories-select {
@@ -302,7 +302,7 @@ color: var(--color-scheme-1-text);
     align-items: center;
     justify-content: center;
     padding: 10px 24px;
-  font-family: var(--font-family);
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -321,8 +321,7 @@ color: var(--color-scheme-1-text);
   }
 
   .category-btn.active {
-   background-color: var(--color-wewak-dark);
-  
+    background-color: var(--color-wewak-dark);
   }
 
   .dessert-list {
@@ -334,16 +333,18 @@ color: var(--color-scheme-1-text);
   display: block;
   margin: 16px auto 0 auto;
   padding: 10px 24px;
-font-family: var(--font-family);
+  font-family: var(--font-family);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
   color: var(--color-neutral-darkest);
-background-color: var(--color-wewak);
+  background-color: var(--color-wewak);
   border: 1px solid var(--color-neutral-darkest);
   border-radius: 100px;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.2s ease;
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease;
 }
 
 .load-more-btn:hover,
@@ -364,7 +365,9 @@ background-color: var(--color-wewak);
   align-items: center;
   background-color: rgba(255, 255, 255, 0.7);
   z-index: 9999;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .loader.is-hidden {
@@ -383,6 +386,10 @@ background-color: var(--color-wewak);
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
