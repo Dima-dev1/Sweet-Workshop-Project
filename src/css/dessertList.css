@@ -1,6 +1,11 @@
-.dessert-list, .dessert-title {
+.dessert-list {
   font-family: "Comfortaa", sans-serif;
 }
+
+.dessert-title {
+  font-family: var(--second-family);
+}
+
 #dessert-section {
   padding-top: 40px;
   padding-bottom: 60px;
@@ -310,6 +315,7 @@
   }
 
   .dessert-list {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
 }
