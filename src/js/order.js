@@ -12,6 +12,7 @@ export function openModal(id) {
   document.body.classList.add('no-scroll');
   form.dataset.id = id;
 }
+
 function closeModal() {
   modalOverlay.classList.remove('is-open');
   document.body.classList.remove('no-scroll');
