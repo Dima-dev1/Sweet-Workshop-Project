@@ -10,7 +10,11 @@
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(../img/hero/desktop/hero-desktop-1x.png);
 }
-
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
 @media screen and (min-resolution: 2x), (-webkit-min-device-pixel-ratio: 2) {
   .hero-section {
     background-image:
