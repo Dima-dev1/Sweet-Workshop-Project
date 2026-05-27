@@ -3,7 +3,7 @@ import { apiInstance } from './api';
 export const getAllDesserts = async ({
   page = 1,
   limit = 8,
-  category = '',
+  category = null,
 }) => {
   const response = await apiInstance.get('/desserts', {
     params: { page, limit, category },

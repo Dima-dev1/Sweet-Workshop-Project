@@ -1,19 +1,65 @@
-# Developers
+🍰 Солодка Майстерня (Sweet Workshop)
 
-Zahar(Zohanimaa) - Header
+## About
 
-Oleg Pov(olegapov) - Hero Section
+A dessert store web application where users can browse desserts, filter by
+category, view detailed information and place orders. Built as a team project.
 
-Mishka Tomashevskyi(Mishka56) - Dessert List Section
+## Features
 
-Ksenia(Kimmimaru) - About Us Section
+- Browse desserts with category filtering
+- Load more pagination (8 items per page)
+- Dessert details modal with star ratings
+- Order form with validation
+- About us image gallery (Swiper.js)
+- Customer reviews slider
+- FAQ accordion
+- Responsive design (mobile / tablet / desktop)
 
-Olia(olyasemenchuk) - FAQ Section
+## Technologies
 
-Oleg Ross(OlegRoss1224) - Feedback Section
+- HTML5, CSS3, JavaScript (ES6+)
+- Vite (bundler)
+- Axios (HTTP requests)
+- Swiper.js (sliders)
+- iziToast (notifications)
+- accordion-js (FAQ)
+- css-star-rating (star ratings)
 
-Dima(Dima-dev1) - Dessert Details Modal
+## API
 
-Krystyna(krystyna-prokopiv) - Order Modal
+Backend: https://deserts-store.b.goit.study/api-docs/
 
-Anna() - Footer
+## Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/Dima-dev1/Sweet-Workshop.git
+
+# Install dependencies
+cd Sweet-Workshop
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## Live Demo
+
+https://dima-dev1.github.io/Sweet-Workshop/
+
+## Team
+
+| Name                         | Section                             |
+| ---------------------------- | ----------------------------------- |
+| Zahar (Zohanimaa)            | Header                              |
+| Oleg Pov (olegapov)          | Hero Section                        |
+| Mishka (Mishka56)            | Dessert List                        |
+| Ksenia (Kimmimaru)           | About Us                            |
+| Olia (olyasemenchuk)         | FAQ                                 |
+| Oleg Ross (OlegRoss1224)     | Feedback                            |
+| Dima (Dima-dev1)             | Dessert Details Modal + Team Lead   |
+| Krystyna (krystyna-prokopiv) | Order Modal + Footer + Scram Master |

@@ -1,5 +1,14 @@
+/* .page-nav, .btn-link {
+  display: none;
+} */
+
+.burger-icon {
+  display: block;
+}
+
 .page-header {
   background-color: #f5fdfd;
+  padding: 16px 0;
 }
 .logo-wrapper {
   display: flex;
@@ -10,13 +19,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 72px;
 }
-.nav-list {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 16px;
-}
+
 .nav-link {
   position: relative;
   display: block;
@@ -54,13 +59,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 72px;
+  padding: 0 20px;
 }
-.nav-logo-text {
-  font-family: "Comfortaa", sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  padding-bottom: 14px;
-}
+
 
 .btn-link {
   width: 133px;
@@ -122,8 +124,10 @@
 
 .mobile-menu-close {
   position: absolute;
-  top: 30px;
-  right: 75px;
+  top: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,6 +142,7 @@
 }
 
 .mobile-menu-link {
+  display: block;
   font-family: "Work Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -145,7 +150,6 @@
   color: #080c0c;
   padding-top: 12px;
   padding-bottom: 12px;
-
 }
 .mobile-menu-link:hover,
 .mobile-menu-link:focus {
@@ -192,8 +196,8 @@
 }
 .burger-icon {
   fill: #080c0c;
-  width: 19px;
-  height: 13px;
+  width: 24px;
+  height: 24px;
 }
 .burger-btn {
   border: none;
@@ -206,7 +210,7 @@
      
 @media screen and (max-width: 768px) {
 
-  .nav-list,
+  .nav-list-header,
   .btn-link {
     display: none;
   }
@@ -216,28 +220,31 @@
   }
 
   .header-container {
-    justify-content: space-between;
+    padding: 0 20px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
-  .nav-list {
+  .nav-list-header {
     display: flex;
+    flex-direction: row;
     gap: 16px;
   }
 
-  .burger-btn {
-    display: none;
-  }
+.burger-btn {
+  display: none;
+}
 
   .header-container {
     justify-content: space-between;
+    padding: 0 32px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .nav-list {
+  .nav-list-header {
     display: flex;
+    flex-direction: row;
     gap: 32px;
   }
 
@@ -247,7 +254,7 @@
   }
 
   .header-container {
-    justify-content: space-between;
+    padding: 0 64px;
   }
 }
 

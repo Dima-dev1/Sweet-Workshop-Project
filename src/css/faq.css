@@ -1,0 +1,78 @@
+.faq-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    background-color: var(--color-ice-cold-lightest);
+}
+
+.faq-header {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: var(--color-neutral-darkest);
+    margin-bottom: 40px;
+}
+
+.ac {
+    border: none;
+    border-top: 2px solid var(--color-neutral-darkest);
+    padding: 20px 0px;
+    background-color: var(--color-ice-cold-lightest);
+}
+.ac .ac-trigger::after {
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+
+    background-image: url("../img/faq/faq-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.ac.is-active>.ac-header .ac-trigger::after {
+    content: "";
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.ac .ac-trigger:focus {
+    color: var(--color-neutral-darkest);
+}
+
+.ac:last-child {
+    border-bottom: 2px solid var(--color-neutral-darkest);
+}
+
+.ac .ac-trigger {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--color-neutral-darkest);
+}
+
+.ac .ac-panel .ac-text {
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-neutral-darkest);
+}
+
+@media screen and (min-width: 1440px) {
+.faq-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    }
+.faq-header {
+    margin-bottom: 80px;
+    font-size: 48px;
+}
+}
