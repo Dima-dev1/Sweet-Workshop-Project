@@ -1,5 +1,6 @@
 .page-header {
   background-color: #f5fdfd;
+  padding: 16px 0;
 }
 .logo-wrapper {
   display: flex;
@@ -219,6 +220,7 @@
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .nav-list {
     display: flex;
+    flex-direction: row;
     gap: 16px;
   }
 
@@ -234,6 +236,7 @@
 @media screen and (min-width: 1440px) {
   .nav-list {
     display: flex;
+    flex-direction: row;
     gap: 32px;
   }
 
