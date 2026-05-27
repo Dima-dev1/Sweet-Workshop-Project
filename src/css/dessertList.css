@@ -1,7 +1,7 @@
 .dessert-list, .dessert-title {
   font-family: "Comfortaa", sans-serif;
 }
-.dessert-section {
+#dessert-section {
   padding-top: 40px;
   padding-bottom: 60px;
   background: var(--color-scheme-1-background);
@@ -18,7 +18,6 @@
 }
 
 .dessert-title {
-  padding-top: 80px;
   font-size: 32px;
   font-weight: 700;
   line-height: 1.2;

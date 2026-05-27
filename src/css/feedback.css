@@ -270,11 +270,11 @@
 
 @media screen and (min-width: 375px) and (max-width: 768px) {
   .feedback-container {
-    width: 375px;
-    height: 577px;
+    width: 100%;
+    height: auto;
     padding: 64px 20px !important;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .title-container {
@@ -296,7 +296,7 @@
     flex-direction: column !important;
     gap: 24px !important;
     position: relative !important;
-    width: 335px !important;
+    width: 100% !important;
     margin-top: 0;
   }
 

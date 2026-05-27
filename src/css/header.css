@@ -1,6 +1,6 @@
-.page-nav, .btn-link {
+/* .page-nav, .btn-link {
   display: none;
-}
+} */
 
 .burger-icon {
   display: block;
@@ -206,7 +206,7 @@
      
 @media screen and (max-width: 768px) {
 
-  .nav-list,
+  .nav-list-header,
   .btn-link {
     display: none;
   }
@@ -221,7 +221,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1440px) {
-  .nav-list {
+  .nav-list-header {
     display: flex;
     flex-direction: row;
     gap: 16px;
@@ -238,7 +238,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .nav-list {
+  .nav-list-header {
     display: flex;
     flex-direction: row;
     gap: 32px;
