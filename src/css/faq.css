@@ -1,5 +1,5 @@
 .faq-section {
-    margin-top: 64px;
+    padding-top: 64px;
     padding-bottom: 64px;
     background-color: var(--color-ice-cold-lightest);
 }
@@ -68,7 +68,7 @@
 
 @media screen and (min-width: 1440px) {
 .faq-section {
-    margin-top: 80px;
+    padding-top: 80px;
     padding-bottom: 80px;
     }
 .faq-header {
