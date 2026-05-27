@@ -1,4 +1,4 @@
-.feedback-container {
+feedback-container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 80px 64px;
@@ -25,13 +25,13 @@
   margin: 0 auto;
   padding: 0 24px;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .card-list.swiper-wrapper {
   display: flex;
   flex-direction: row;
 }
+
 .card-item.swiper-slide {
   height: 233px;
   background: #ffffff;
@@ -122,10 +122,12 @@
   cursor: not-allowed;
   opacity: 1;
 }
+
 .prev-btn.swiper-button-disabled img,
 .next-btn.swiper-button-disabled img {
   opacity: 0.35;
 }
+
 .prev-btn img,
 .next-btn img {
   width: 24px;
@@ -165,6 +167,7 @@
 }
 
 .title-container p {
+  font-family: 'Work Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -175,7 +178,7 @@
 }
 
 .title {
-  font-family: var(--second-family);
+  font-family: 'Comfortaa', sans-serif;
   font-weight: 700;
   font-size: 48px;
   line-height: 1.2;
@@ -185,6 +188,7 @@
 }
 
 .review-text {
+  font-family: 'Work Sans', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -192,6 +196,7 @@
 }
 
 .review-author {
+  font-family: 'Work Sans', sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.33;
@@ -205,19 +210,21 @@
     max-width: 100%;
     box-sizing: border-box;
     padding: 0 24px;
-    overflow: visible;
+    overflow: hidden;
     margin: 40px auto 0 auto;
   }
+
   .feedback-container {
-    min-width: unset;
+    min-width: 768px;
     padding: 64px;
   }
+
   .card-wrapper.swiper {
     width: 100%;
     max-width: 100%;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .card-item.swiper-slide {
@@ -258,6 +265,7 @@
     line-height: 1.5;
     margin-top: 24px;
   }
+
   .review-author {
     width: 186px;
     height: 24px;
@@ -268,11 +276,11 @@
 
 @media screen and (min-width: 375px) and (max-width: 768px) {
   .feedback-container {
-    width: 100%;
-    height: auto;
+    width: 375px;
+    height: 577px;
     padding: 64px 20px !important;
     box-sizing: border-box;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .title-container {
@@ -294,7 +302,7 @@
     flex-direction: column !important;
     gap: 24px !important;
     position: relative !important;
-    width: 100% !important;
+    width: 335px !important;
     margin-top: 0;
   }
 
@@ -306,16 +314,12 @@
     pointer-events: none;
   }
 
-    .card-wrapper.swiper {
-      position: relative !important;
-      width: 100% !important;
-      padding: 0 !important;
-      overflow: hidden !important;
-    }
-
-    .slider-container-box {
-      overflow: hidden;
-    }
+  .card-wrapper.swiper {
+    position: relative !important;
+    width: 100% !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
 
   .card-item {
     padding: 32px !important;
