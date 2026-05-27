@@ -45,9 +45,10 @@
 }
 
 .icon-header {
-  width: 48px;
+  width: 146px;
   height: 31px;
-  margin-right: 5px;
+  padding-top: 17px;
+  padding-bottom: 17px;
 }
 .header-container {
   display: flex;
@@ -198,6 +199,9 @@
   border: none;
   background-color: transparent;
   outline: none;
+}
+.header-container {
+  height: 72px;
 }
      
 @media screen and (max-width: 768px) {
