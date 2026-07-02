@@ -26,6 +26,13 @@ shopBtn.addEventListener('click', () => {
   document.body.style.overflow = '';
 });
 
+const mobileShopBtn = document.querySelector('.mobile-menu-btn');
+mobileShopBtn?.addEventListener('click', () => {
+  mobileMenu.classList.remove('is-open');
+  document.body.style.overflow = '';
+  document.querySelector('#dessert-section')?.scrollIntoView();
+});
+
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
     mobileMenu.classList.remove('is-open');

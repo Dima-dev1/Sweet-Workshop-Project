@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: space-between;
   height: 72px;
-  padding: 0 20px;
 }
 
 .logo-wrapper {
@@ -221,15 +220,5 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .nav-list-header {
     gap: 16px;
-  }
-
-  .header-container {
-    padding: 0 32px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .header-container {
-    padding: 0 64px;
   }
 }

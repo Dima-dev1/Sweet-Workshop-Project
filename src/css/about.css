@@ -10,11 +10,6 @@
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    width: 100%;
-    max-width: 1456px;
-    padding: 0 64px;
-    margin: 0 auto;
-    box-sizing: border-box;
 }
 
 .about__intro {
@@ -223,10 +218,6 @@
 
     .about__container {
         gap: 0;
-        padding: 0 32px;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
     }
 
     .about__title {
@@ -280,13 +271,6 @@
         padding-bottom: 64px;
     }
 
-    .about__container {
-        width: 100%;
-        padding: 0 20px; /* Завжди мінімум 20px від країв секції */
-        box-sizing: border-box;
-        margin: 0 auto;
-    }
-
     .about__gallery-wrapper {
         margin-top: 40px;
         width: 100%;
@@ -310,25 +294,25 @@
 
     .about__slide {
         width: 100%;
-        max-width: 340px; 
+        max-width: 340px;
         aspect-ratio: 335 / 249;
-        margin: 0 auto !important;
-        border-radius: 16px !important;
-        overflow: hidden !important; 
+        margin: 0 auto;
+        border-radius: 16px;
+        overflow: hidden;
     }
 
     .about__slide img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 16px !important;
+        border-radius: 16px;
     }
 
     .about__nav-button {
-        display: none !important;
+        display: none;
     }
 
     .about__pagination {
-        display: none !important;
+        display: none;
     }
 }

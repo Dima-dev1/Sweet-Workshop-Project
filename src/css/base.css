@@ -65,9 +65,8 @@ body {
   font-family: var(--font-family);
   display: flex;
   flex-direction: column;
-  width: 100%;
+  min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  overflow-x: hidden;
   background-color: var(--color-ice-cold-lightest);
 }

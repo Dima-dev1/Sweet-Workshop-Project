@@ -6,22 +6,6 @@
   font-family: var(--second-family);
 }
 
-.dessert-section {
-  padding-top: 40px;
-  padding-bottom: 60px;
-  background: var(--color-scheme-1-background);
-}
-
-.dessert-container {
-  width: 100%;
-  min-width: 320px;
-  max-width: 375px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .dessert-title {
   font-size: 32px;
   font-weight: 700;
@@ -205,9 +189,6 @@
 
 @media screen and (min-width: 768px) {
   .dessert-container {
-    max-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
     display: grid;
     grid-template-columns: 1fr auto;
     column-gap: 20px;
@@ -252,9 +233,6 @@
 
 @media screen and (min-width: 1440px) {
   .dessert-container {
-    max-width: 1312px;
-    padding-left: 0px;
-    padding-right: 0px;
     display: block;
   }
 

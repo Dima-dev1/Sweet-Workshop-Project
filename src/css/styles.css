@@ -4,6 +4,13 @@
   | default @import url()
   |============================
 */
+/* Self-hosted fonts (bundled by Vite, no render-blocking Google Fonts request) */
+@import url('@fontsource/comfortaa/700.css');
+@import url('@fontsource/work-sans/400.css');
+@import url('@fontsource/work-sans/500.css');
+@import url('@fontsource/work-sans/600.css');
+@import url('@fontsource/work-sans/700.css');
+
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');

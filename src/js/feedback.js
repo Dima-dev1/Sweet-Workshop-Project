@@ -67,7 +67,7 @@ function renderFeedbacks(feedbacks) {
           <div class="stars-container">${stars}</div>
         </div>
         <p class="review-text">"${item.description}"</p>
-        <h4 class="review-author">${item.author}</h4>
+        <p class="review-author">${item.author}</p>
       </li>
     `;
     })
@@ -98,8 +98,7 @@ function initFeedbackSlider() {
     },
     breakpoints: {
       320: { slidesPerView: 1, spaceBetween: 24 },
-      768: { slidesPerView: 3, spaceBetween: 26 },
-      1280: { slidesPerView: 3, spaceBetween: 24 },
+      768: { slidesPerView: 3, spaceBetween: 24 },
     },
   });
 }

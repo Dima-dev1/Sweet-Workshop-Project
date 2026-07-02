@@ -1,20 +1,23 @@
-<section id="feedbacks">
-  <div class="feedback-container">
+<section id="feedbacks" class="feedback-section">
+  <div class="container">
     <div class="title-container">
       <h2 class="title">Відгуки клієнтів</h2>
       <p class="title-text">Найкращі десерти, які я коли-небудь куштував!</p>
     </div>
 
     <div class="slider-container-box">
-      <div class="card-wrapper swiper">
-        <button class="prev-btn">
-          <svg width="48" height="48" aria-label="Назад">
+      <div class="slider-area">
+        <div class="card-wrapper swiper">
+          <ul class="card-list swiper-wrapper"></ul>
+        </div>
+
+        <button class="prev-btn" type="button" aria-label="Попередній відгук">
+          <svg width="24" height="24" aria-hidden="true" focusable="false">
             <use href="/sprite.svg#icon-arrow-back"></use>
           </svg>
         </button>
-        <ul class="card-list swiper-wrapper"></ul>
-        <button class="next-btn">
-          <svg width="48" height="48" aria-label="Вперед">
+        <button class="next-btn" type="button" aria-label="Наступний відгук">
+          <svg width="24" height="24" aria-hidden="true" focusable="false">
             <use href="/sprite.svg#icon-arrow-forward"></use>
           </svg>
         </button>
